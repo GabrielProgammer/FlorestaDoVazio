@@ -1,0 +1,332 @@
+<!--Saved by Quest 5.7.6404.16853-->
+<asl version="550">
+  <include ref="GamebookCore.aslx" />
+  <game name="A Floresta do Vazio">
+    <gameid>7ff46e52-8efb-4843-8a5f-ed9a00765684</gameid>
+    <version>1.0</version>
+    <firstpublished>2017</firstpublished>
+    <description type="string"></description>
+    <category>Horror</category>
+    <defaultbackground>Black</defaultbackground>
+    <defaultlinkforeground>GoldenRod</defaultlinkforeground>
+    <defaultforeground>Chocolate</defaultforeground>
+    <defaultfontsize type="int">14</defaultfontsize>
+    <author>JM</author>
+    <showborder type="boolean">false</showborder>
+    <setcustompadding type="boolean">false</setcustompadding>
+    <roomenter type="script"><![CDATA[
+      msg ("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css\"><br/><link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">")
+    ]]></roomenter>
+    <clearlastpage />
+  </game>
+  <object name="Page1">
+    <inherit name="scripttext" />
+    <description type="string"></description>
+    <options type="stringdictionary" />
+    <picture type="string"></picture>
+    <sound type="string"></sound>
+    <continuesound />
+    <script type="script"><![CDATA[
+      picture ("casa.png")
+      msg ("<iframe style = \"margin-left: 6em;\" width=\"425\" height=\"344\" src=\"https://www.youtube.com/embed/ql7cgNlpE0E?autoplay=1&amp;rel=0\" frameborder=\"0\" allowfullscreen=\"\"></iframe>")
+      msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">O começo...</span><br/>              <p>&nbsp&nbsp&nbspVocê começa a acordar de um sono profundo, seus olhos ainda pesados, como se não os tivesse aberto em semanas..<br/>&nbsp&nbsp&nbspVocê alcança sua mão em seu rosto, lutando para estender seus músculos. Esfregando os olhos, você finalmente os abriu. Você se encontra em uma cama em uma sala desconhecida com pouca luz...<br/>Como você chegou aqui? A última coisa que você recorda é que estava caminhando a noite quando foi atingido por um táxi. <br/>&nbsp&nbsp&nbspÀ sua direita há uma janela quebrada. Você vê ao fundo, algumas cabanas e logo mais adiante uma floresta bastante densa.</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+      choice ("Para onde você vai?")
+      msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Floresta\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Floresta</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Cabanas\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Cabanas</b></div>")
+    ]]></script>
+    <object name="player">
+      <inherit name="defaultplayer" />
+    </object>
+    <object name="Floresta">
+      <inherit name="scripttext" />
+      <description type="string"></description>
+      <options type="stringdictionary" />
+      <sound>Musica de Suspense - Terror Requiem For Dream.mp3</sound>
+      <script type="script"><![CDATA[
+        msg (" <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">A floresta</span><br/>              <p align=\"justify\">&nbsp&nbsp&nbspQuando avista as árvores você percebe marcas de sangue nas folhas e mais a frente vê uma pilha de corpos nus: idosos, crianças, homens, mulheres. Há todo tipo de pessoa por aqui, o verde dos matos e pequenas plantas são substituídos pelo vermelho escuro do sangue de toda essa gente. <br/>&nbsp&nbsp&nbspDe repente uma dor repentina ataca por todo o seu corpo. Você olha pra si mesmo tentando encontrar algum ferimento, mas apenas sente um galo na cabeça e muita dor de cabeça.</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div><br/>")
+        choice ("Você deseja correr para as cabanas?")
+        msg ("<br><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Cabanas\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Correr pras cabanas</b></div>")
+      ]]></script>
+    </object>
+  </object>
+  <object name="Cabanas">
+    <inherit name="scripttext" />
+    <description type="string"></description>
+    <options type="stringdictionary" />
+    <picture type="string"></picture>
+    <sound>Musica de Suspense - Terror Requiem For Dream.mp3</sound>
+    <script type="script"><![CDATA[
+      picture ("a-cabana-frente.jpg")
+      msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Na cabana...</span><br/>              <p>&nbsp&nbsp&nbspVocê vê cabanas isoladas, muito distante uma das outras. E olha ao seu redor e percebe que está em uma. Você se sente extremamente fraco e tenso, então decide sentar em uma cama box bastante antiga, há poeira por todo canto. Há vários quadros de famílias, casais e pessoas não acompanhadas. Eis que você ouve um barulho vindo da cabana á sua direita, você ouve gritos desesperados. De repente uma voz grossa rasga o ambiente dizendo.<br/><b>- A conduta define o homem, você foi umá má pessoa e seus amigos também. Você pagará por todos.</b><br/>&nbsp&nbsp&nbspSubitamente, o ruído de ossos são ouvidos juntamente com um berro. Você está em choque, não consegue entender o que acabou de acontecer ali, mas está disposto a sair de lá, seja lá para onde for. Você se empurra para levantar-se da cama, se esforçando bastante. <br/><br/><br/> </p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+      choice ("O que você pretende fazer?")
+      msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"opçes cabana\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Se levanta</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"opcao cabana Deixar pra dps\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Vira pro outro lado e deixa pra descobrir depois</b></div>")
+    ]]></script>
+    <object name="opçes cabana">
+      <inherit name="scripttext" />
+      <description type="string"></description>
+      <options type="stringdictionary" />
+      <script type="script"><![CDATA[
+        msg (" <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Você se levanta</span><br/>              <p>Você se levanta da cama e tenta se orientar e ficar de pé sem cair.<br/><br/>As únicas saídas parecem ser a janela, e a porta que você vê no lado mais distante da sala.<br/></p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+        choice ("Você corre o risco de tentar a janela ou tentar a porta?")
+        msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"opçao janela da cabana\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Janela</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"opçao porta da cabana\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Porta</b></div> <br/>")
+      ]]></script>
+      <object name="opçao janela da cabana">
+        <inherit name="scripttext" />
+        <description type="string"></description>
+        <options type="stringdictionary" />
+        <script type="script"><![CDATA[
+          msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">De repente!</span><br/>              <p>Quando você começa a forçar a janela para sair ela se despedaça e faz um barulho que acordaria qualquer pessoa num raio de 100 metros. <br/><br/>.... VOCÊ COMEÇA A OUVIR PASSOS ...</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div><br/>")
+          choice ("O que você deseja fazer ?")
+          msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"opçes cabana\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Voltar</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Ficar lá\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Ficar lá e ser pego pela possível pessoa que lhe levou até lá</b></div> ")
+        ]]></script>
+        <object name="Ficar lá">
+          <inherit name="scripttext" />
+          <description type="string"></description>
+          <options type="stringdictionary" />
+          <script type="script"><![CDATA[
+            msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">A floresta</span><br/>              <p>Quando você se deu conta, viu apenas uma sombra que dava ao entender que havia algém nas suas costas..<br/><br/>Você se vira e vê apenas um homem rindo.<br/>Ele diz: Você tentou fugir e desistiu no meio do caminho. Fez uma péssima escolha. Tinha outros planos para você, mas você escolheu errado e agora vai pagar.<br/>Ele levanta a faca e ...</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+            choice ("VOCÊ ESTÁ MORTO")
+            msg ("<br><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Ponto de verificação\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Tentar novamente</b></div>")
+          ]]></script>
+        </object>
+      </object>
+      <object name="opçao porta da cabana">
+        <inherit name="scripttext" />
+        <description type="string"></description>
+        <options type="stringdictionary" />
+        <script type="script"><![CDATA[
+          msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">A floresta</span><br/>              <p>Quando você se deu conta, viu apenas uma sombra que dava ao entender que havia algém nas suas costas..<br/><br/>Afastando-se da janela, você se dirige para a porta, movendo-se lentamente, de modo que o chão ficou silencioso abaixo de você.<br/><br/> De repente, você ouve um rangido. Não é de você ... há alguém do outro lado da porta. Você se move o mais rápido possível para ficar atrás da porta, protegendo-se de quem está do outro lado.<br/>O rangido fica mais alto, agora acompanhado de passos. De repente, a porta é aberta e uma figura entra na sala com uma faca grande. Ele lentamente se move em direção à cama, acreditando que você ainda continua lá. Você olha através da fenda na porta e vê que ela conduz para fora da floresta. Este é o seu momento, você pensa.<br/><br/> Você ouve a figura gritando atrás de você, e esse é todo o encorajamento que você precisa para se mover mais rápido.<br/></p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+          choice ("Você deseja correr?")
+          msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Correr Sim\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Sim, desejo fugir</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Correr não\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Não, desejo ficar e enfrentar</b></div> ")
+        ]]></script>
+      </object>
+    </object>
+    <object name="opcao cabana Deixar pra dps">
+      <inherit name="scripttext" />
+      <description type="string"></description>
+      <options type="stringdictionary" />
+      <script type="script"><![CDATA[
+        msg ("<br/>     <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Até que enfim</span><br/>              <p>Você está nervoso com essa escolha, mas você sabe que você não conseguiria sair da sua condição agora. Além disso, você nem sabe se há uma saída.<br/><br/>Seus pensamentos pararam imediatamente quando você ouve o rangido do chão. Passos pegam seus ouvidos, aparentemente ficam mais altos quando se aproximam. Você congelou imediatamente, pensando  que deveria ter deixado aquele lugar enquanto havia tempo...</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div><br/>")
+        choice ("Você corre ou permanece congelado?")
+        msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Correr Sim\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Claro que quero correr</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Correr não\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Não tenho forças pra correr</b></div> <br/>")
+      ]]></script>
+      <object name="Correr Sim">
+        <inherit name="scripttext" />
+        <description type="string"></description>
+        <options type="stringdictionary" />
+        <script type="script"><![CDATA[
+          msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">A floresta</span><br/>              <p>Você então corre desesperadamente esbarrando em tudo que há pela frente..<br/><br/>Você não sabe pra onde ir, e nem o que fazer ..<br/>A única coisa que se sabe é que tem que se afastar dali o mais rápido possível.<br/><br/>Você olha para trás e escuta um grito da possível pessoa que acaba de perceber sua ausência.<br/><br/>Imediatamente você se desespera.<br/></p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+          choice ("O que fazer agora?")
+          msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Procurar ajuda SIM\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Sair gritando loucamente por ajuda.</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Não procurar ajuda e se acalmar\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Tentar se esconder atrás de alguma árvore até se acalmar e pensar em um plano.</b></div> ")
+        ]]></script>
+        <object name="Procurar ajuda SIM">
+          <inherit name="scripttext" />
+          <description type="string"></description>
+          <options type="stringdictionary" />
+          <script type="script"><![CDATA[
+            msg ("     <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Pensando bem</span><br/>              <p>Você pensa e repensa...<br/>Se você gritar ele pode lhe ouvir e lhe achar mais facilmente. Afinal, você não faz a mínima ideia de onde está.<br/><br/>Mas... Se não gritar, a probabilidade de alguém lhe encontrar é de uma em um milhão.</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+            choice ("Você realmente deseja arriscar?")
+            msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"sim desejo gritar\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Sim, desejo gritar por ajuda, pois pode ser minha única chance.</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Preciso colocar a cabeça em ordem\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Não, preciso me concentrar e correr pra mais longe o possível.</b></div>")
+          ]]></script>
+          <object name="sim desejo gritar">
+            <inherit name="scripttext" />
+            <description type="string"></description>
+            <options type="stringdictionary" />
+            <script type="script"><![CDATA[
+              msg ("     <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Oh não</span><br/>              <p>Você chamou atenção de algo ou alguém.<br/><br/>Será que foi uma boa ideia?<br/>Alguem se aproxima.. Pode ser sua chance.<br/><br/>Você vê esperanças quando de repente algém te ataca pulando em cima de você e fazendo-o cair para trás..<br/><br/>É isso mesmo que você está vendo. Não é um sonho..<br/><br/>É UM MORTO VIVO<br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+              choice ("O que você faz?")
+              msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"bater nele desesperadamente\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Bate nele para analisar o que ele realmente é</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"tentar escapar e sair correndo\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>O empurra para fugir</b></div>")
+            ]]></script>
+          </object>
+        </object>
+      </object>
+      <object name="Correr não">
+        <inherit name="scripttext" />
+        <description type="string"></description>
+        <options type="stringdictionary" />
+        <script type="script"><![CDATA[
+          msg (" <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">O fim</span><p>Você deseja continuar ali e por um fim nessa história na qual você nem se quer lembra como começou.<br/><br/>[...] Alguém entra ..<br/>Você não tem coragem de olhar mas vai juntando forças para se defender de qualquer coisa.<br/><br/>- ATÉ QUEM ENFIM ACORDOU (risos). <br/>Você olha.    E reconhece o cara. Sim, é ele. O motorista do Táxi no qual você foi pegou outro dia.<br/>MAS... Quanto tempo faz que você está ali? E pq não está em um hospital ?</p></div><br/>        </div><br/>      </div>")
+          choice ("Você faz muitas perguntas")
+          msg ("<br>")
+          choice ("Ele apenas gargalha com uma cara que te dá arrepios ...")
+          msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"CONTINUE01\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Continua</b> <br>")
+        ]]></script>
+        <object name="Não procurar ajuda e se acalmar">
+          <inherit name="scripttext" />
+          <description type="string"></description>
+          <options type="stringdictionary">
+            <item>
+              <key>Ponto de verificação 3</key>
+              <value></value>
+            </item>
+          </options>
+          <script type="script"><![CDATA[
+            msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Não consigo</span><p>Você deseja se acalmar, e tentar entender tudo que está acontecendo.<br/><br/>Você ouve passos e grunidos.. Seria um bicho ? <br/><br/><br/>Onde você se meteu? Você toma coragem e tenta olhar a sua volta.<br/>Nesse exato momento vc é atacado.<br/><br/>Um cara com aparência estranha agindo como um animal.<br/><br/>                 ZUMBIS ??? MORTOS VIVOS ??? SÉRIO ?<br/>         Bati a cabeça e acordei num filme ?</p></div><br/>        </div><br/>      </div>")
+            choice ("O que fazer agora?")
+            msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"bater nele desesperadamente\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Bater nele desesperadamente</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"tentar escapar e sair correndo\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Tentar sair correndo para escapar</b></div>")
+          ]]></script>
+          <object name="bater nele desesperadamente">
+            <inherit name="scripttext" />
+            <description type="string"></description>
+            <options type="stringdictionary" />
+            <script type="script"><![CDATA[
+              msg ("     <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Até que enfim</span><br/>              <p>Você começa a se esperniar e percebe que a única intenção dele é te morder.<br/><br/>Você consegue o chutar para trás e quando ele já está no chão você pega uma pedra e joga nele.<br/><br/>Pronto, esse já era.<br/>Mas .... O que é isso ? Da onde ele esta vindo? Pq ele existe? Você só fica cada vez mais confuso.</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+              choice ("Você olha em volta e não sabe mais em que munda está.")
+              msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Continue 3\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Continue</b></div><br/>")
+            ]]></script>
+            <object name="Continue 3">
+              <inherit name="scripttext" />
+              <options type="stringdictionary" />
+              <description type="string"></description>
+              <script type="script"><![CDATA[
+                choice ("Há apenas uma saída...")
+                msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"pegar um carro e sair dali\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Pegar algum carro que está abandonado logo à frente</b> <br>")
+              ]]></script>
+            </object>
+          </object>
+          <object name="tentar escapar e sair correndo">
+            <inherit name="scripttext" />
+            <description type="string"></description>
+            <options type="stringdictionary" />
+            <script type="script"><![CDATA[
+              msg (" <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">O fim</span><p>Você tenta empurrá-lo para fugir, mas ele é mais forte.<br/>Ele está desesperado..<br/><br/>Você ouve passos..<br/>Quando você se vira para ver o q era.. ELE TE MORDE<br/><br/><br/>Você sente uma dor desesperadora, e prefere a morte do que a isso.<br/><br/><br/>Você começa a ficar tonto e ... já não vê mais nada</p></div><br/>        </div><br/>      </div>")
+              choice ("VOCÊ ESTÁ MORTO.")
+              msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Ponto de verificação 3\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Checkpoint</b>")
+            ]]></script>
+            <object name="Ponto de verificação 3">
+              <inherit name="scripttext" />
+              <options type="stringdictionary" />
+              <script type="script"><![CDATA[
+                msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Não procurar ajuda e se acalmar\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Checkpoint</b> <br>")
+              ]]></script>
+            </object>
+          </object>
+        </object>
+        <object name="Preciso colocar a cabeça em ordem">
+          <inherit name="scripttext" />
+          <description>  </description>
+          <options type="stringdictionary" />
+          <script type="script"><![CDATA[
+            msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Quando tento descansar</span><p>Você se senta, tenta colocar a cabeça em ordem.. Olhando fixamente pra frente..<br/>Quando derrepente se dar conta de que há alguns metros há provavelmente uma saída.<br/>Você vê um carro se movendo há alguns metros a frente.<br/><br/>Uma rodovia? Uma pista? Qualquer coisa é melhor do que estar ali.<br/>Você começa a ter esperanças, você corre, corre e finalmente alcança o local desejado.<br/><br/>Mas....</p></div><br/>        </div><br/>      </div>")
+            choice ("Não há nada nem ninguém. Só uma pista de mão única.")
+            msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Continue1 CABEÇA EM ORDEM\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Continue</b>")
+          ]]></script>
+        </object>
+        <object name="CONTINUE01">
+          <inherit name="scripttext" />
+          <description type="string"></description>
+          <options type="stringdictionary" />
+          <script type="script"><![CDATA[
+            msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">O encontro</span><p>- Você teve sua chance de escapar, pena que deixou apenas a chance escapar e não foi junto com ela.. haha - ELE DISSE.<br/><br/>E completa..<br/>   - Se você tentar fugir agora será ainda mais doloroso...... haha<br/><br/>Você só fecha os olhos e sente uma picada muito forte neles. Logo após você apaga..</p></div><br/>        </div><br/>      </div>")
+            choice ("VOCÊ ESTÁ MORTO.")
+            msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Ponto de verificação 5\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Checkpoint</b>")
+          ]]></script>
+          <object name="Ponto de verificação 5">
+            <options type="stringdictionary">
+              <item>
+                <key>opcao cabana Deixar pra dps</key>
+                <value>CHECKPOINT</value>
+              </item>
+            </options>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+  <object name="Ponto de verificação">
+    <options type="stringdictionary">
+      <item>
+        <key>opçao janela da cabana</key>
+        <value>CHECKPOINT</value>
+      </item>
+    </options>
+  </object>
+  <object name="Continue1 CABEÇA EM ORDEM">
+    <inherit name="scripttext" />
+    <description><![CDATA[<br/><br/>]]></description>
+    <options type="stringdictionary" />
+    <script type="script"><![CDATA[
+      msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Acho que posso sair vivo disso</span><p>Você decide então andar pela pista na esperança de que algém apareça para te socorrer.<br/><br/>Você começa a ver um pontinho muito longe... Tem algo ali.. Você sente que ta cada vez mais perto de sair desse pesadelo.<br/><br/>Você se aproxima e vê que é um carro parado... você corre e vê que tem outros carros, todos no mesmo estado que o outro.. Todos aparentemente abandonados com portas abertas e bagagens dentro.</p><br/>      </div><br/>     </div><br/>    </div><br/>   </div><br/> <br/>")
+      choice ("O que você pretende fazer agora?")
+      msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"continuar andando\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Continuo andando</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"pegar um carro e sair dali\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Pego qualquer carro e saio dali o mais rápido possível</b></div> ")
+    ]]></script>
+    <object name="continuar andando">
+      <inherit name="scripttext" />
+      <description type="string"></description>
+      <options type="stringdictionary" />
+      <script type="script"><![CDATA[
+        msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Um barulho é ouvido</span><br/>              <p>Você resolveu continuar explorando o local. Mas..<br/><br/>Você escuta um barulho dentro de um dos carros.. Você resolve ver, pode ser alguém fugindo como você..<br/><br/>Quando você coloca o rosto pra dentro da janela ... ALGO TE ATACA<br/><br/>Você nem soube o q era..</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+        choice ("VOCÊ ESTÁ MORTO")
+        msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Ponto de verificação 2\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Tentar novamente</b>")
+      ]]></script>
+      <object name="Ponto de verificação 2">
+        <options type="stringdictionary">
+          <item>
+            <key>Continue1 CABEÇA EM ORDEM</key>
+            <value>CHECKPOINT</value>
+          </item>
+        </options>
+      </object>
+    </object>
+    <object name="pegar um carro e sair dali">
+      <inherit name="scripttext" />
+      <description type="string"></description>
+      <options type="stringdictionary" />
+      <script type="script"><![CDATA[
+        msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">O que é isso?</span><br/>              <p>Você pegou o carro, está dirigindo desesperadamente.<br/><br/>O que você mais quer é chegar na cidade e ter sua vida de volta.<br/><br/>Você está perto, você vê casas se aproximando... MAS, ao passar por um trecho, você estremece...</p><br/>            </div><br/>          </div><br/>        </div><br/>      </div>")
+        choice ("O que aconteceu na minha cidade? No meu mundo?")
+        msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Continue 2 CHEGAR NA CIDADE\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Continue</b>")
+      ]]></script>
+      <object name="Continue 2 CHEGAR NA CIDADE">
+        <inherit name="scripttext" />
+        <description><![CDATA[<br/><br/>]]></description>
+        <options type="stringdictionary" />
+        <script type="script"><![CDATA[
+          msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">De repente</span><br/>              <p>Algo cai em cima do seu carro<br/><br/>Você freia bruscamente e algo é arremessado logo à sua frente.<br/><br/>Você desce do carro e vê uma criança jogada no chão.  Você se desespera e corre para socorrê-la... Quando você se aproxima.... Você nota que é mais um daqueles bichos que te atacou agora a pouco, e você grita, \"DROGA!\"<br/><br/>Logo em seguida, a criatura que aparentava ser uma criança se levanta de um pulo e fala: <br/><b>- A CONDUTA DEFINE O HOMEM, VOCÊ FOI UMA MÁ PESSOA, E SEUS AMIGOS TAMBÉM. VOCÊ PAGARÁ POR TODOS.</b><br/></p><br/>            </div><br/>          </div><br/>        </div><br/>      </div><br/>")
+          choice ("O silêncio toma conta do ambiente.")
+          msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Page2 CONT criança\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>E agora?</b>")
+        ]]></script>
+        <object name="Page2 CONT criança">
+          <inherit name="scripttext" />
+          <description><![CDATA[<br/><br/>]]></description>
+          <options type="stringdictionary" />
+          <script type="script"><![CDATA[
+            msg (" <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">NÂO, por Deus</span><p>Você tenta correr mas percebe que está cercado, e no meio deles... Ele está lá...<br/>O cara da cabana.. ele anda no meio dessas pessoas, mas não está como elas ...<br/><br/>Ele se aproxima lentamente com aquele velho sorriso irônico e aquela velha seringa na mão..<br/><br/>Você olha a sua volta e está cercado.</p><br/>      </div><br/>     </div><br/>    </div><br/>   </div><br/> ")
+            choice ("O que você deseja fazer ?")
+            msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Se entregar\" ><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Se entregar logo, não tem mais nada à fazer</b> <br><br/><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Tentar\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Tentar fugir. Não desisto nunca.</b></div> ")
+          ]]></script>
+          <object name="Se entregar">
+            <inherit name="scripttext" />
+            <description type="string"></description>
+            <script type="script"><![CDATA[
+              msg ("<div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Mas o que?</span><p>E aquela velha sensação está de volta ...<br/>Você abre os olhos, não lembra muito o que aconteceu, nem onde está.<br/><br/>Aquela velha história se repete ......<br/><br/>Você mais uma vez se encontra em uma cama em uma sala desconhecida com pouca luz...<br/>Como você chegou aqui novamente? A última coisa que você recorda é que foi pego por um bando de mortos vivos e um motorista de táxi sorrindo com uma seringa na mão.<br/><br/>Só há uma diferença ... Agora a cabana já não está mais vazia... aquelas coisas que lhe atacaram estão lá todos em pé como vigias.. Você olha para o lado e vê o velho motorista<br/><br/>Ele sorri e diz:</p><br/>      </div><br/>     </div><br/>    </div><br/>   </div>")
+              choice ("QUE BOM QUE ACORDOU, AGORA VAMOS COMEÇAR.")
+              msg ("")
+            ]]></script>
+          </object>
+          <object name="Tentar">
+            <inherit name="scripttext" />
+            <description><![CDATA[<br/>]]></description>
+            <options type="stringdictionary" />
+            <script type="script"><![CDATA[
+              msg (" <div class=\"row\" style= \"margin-left: 5%;\"><br/>        <div class=\"col s12\"><br/>          <div class=\"card blue-grey lighten-4\"><br/>            <div class=\"card-content \"><br/>              <span class=\"card-title center-align black z-depth-5\">Não entendo nada</span><p>Você TENTA correr, mas sem sucesso. <br/><br/>O cara da cabana que é exatamente o mesmo motorista do táxi que você pegou outro dia, GRITA:<br/><br/>TE DEI UMA CHANCE DE ENTENDER TUDO ISSO, MAS... VOCÊ FUGIU, TO TE DANDO A SEGUNDA E VOCÊ CONTINUA FUGINDO ?<br/><br/>A conduta define o homem, você foi uma má pessoa e seus amigos também. Você pagará por todos. <br/><br/>Você pensa: \" Essa frase de novo ????\"<br/>                    \"O que isso quer dizer?????\"<br/><br/>Você sente seu corpo ficar pesado e uma dor aguda nas costas, você não sabe exatamente o que aconteceu, mas sua visão começa a ficar turva.. Você fechou os olhos e..<br/></p><br/>      </div><br/>     </div><br/>    </div><br/>   </div>")
+              choice ("VOCÊ ESTÁ MORTO.")
+              msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Ponto de verificação 4\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Checkpoint</b>")
+            ]]></script>
+            <object name="Ponto de verificação 4">
+              <inherit name="scripttext" />
+              <options type="stringdictionary" />
+              <script type="script"><![CDATA[
+                msg ("<br><br/><div class =\"row center-align\"><a class=\"btn btn-floating pulse cmdlink commandlink\" data-elementid=\"\" data-command=\"Page2 CONT criança\"><i class=\"material-icons\">chevron_right</i></a>&nbsp<b>Checkpoint</b> <br>")
+              ]]></script>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+  <function name="choice" parameters="texto"><![CDATA[
+    SetFontName ("'Comic Sans MS', cursive, sans-serif")
+    SetFontSize (14)
+    PrintCentered (("<i style = \"padding: 10px ;border-radius: 11px; background-color: #FF7F50; color: white;\">") + texto + ("</i>"))
+  ]]></function>
+</asl>
